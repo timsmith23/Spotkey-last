@@ -1,0 +1,135 @@
+<link rel="import" href="partials/_header.html">
+
+<div class="dashboard-header">
+  <ul class="user-menu">
+    <li class="user-pic">
+      <i class="fa fa-caret-down"></i>
+      <ul>
+        <li><a href="settings.html">Settings</li>
+        <li><a href="key_settings.html">Key Setting</a></li>
+        <li><a href="signout.html">Signout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h1>Your Dashboard</h1>
+  <div class="logo">
+    <img src'img/logo.png'></img>
+  </div>
+</div>
+
+<div class='dashboard well'>
+  <div class='my-maps'>
+    <div id="map" style='width: 100vw; height: 100vh;'></div>
+
+    <div class='my-spotkeys' id='my-spotkeys'>
+      <div class='addKey'>
+        <span>Add a Spot</span>
+        <section class="the_spotkey">
+          <img src="img/favicon.png">
+          <h1>Spotkey, Inc</h1>
+          <p>425 Market Street<br>
+          San Fransico, CA&nbsp;&nbsp;94105</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class='add_spotkey'>
+    <h3>Add a Spotkey</h3>
+    <form id="spotkey_form">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" >
+      <label for="street">Street</label>
+      <input id="street" name="street" type="text" >
+      <label for="city">City</label>
+      <input id="state" name="name" type="text" >
+      <label for="state" list="state">State</label>
+        <datalist id="states">
+          <option value="Alabama">
+          <option value="Alaska">
+          <option value="Arizona"> 
+          <option value="Arkansas">
+          <option value="California">
+          <option value="Colorado">
+          <option value="Connecticut">
+          <option value="Delaware">
+          <option value="Florida">
+          <option value="Georgia">
+          <option value="Hawaii">
+          <option value="Idaho"> 
+          <option value="Illinois">
+          <option value="Indiana">
+          <option value="Iowa"> 
+          <option value="Kansas">
+          <option value="Kentucky"> 
+          <option value="Louisiana"> 
+          <option value="Maine">
+          <option value="Maryland"> 
+          <option value="Massachusetts">
+          <option value="Michigan">
+          <option value="Minnesota"> 
+          <option value="Mississippi">
+          <option value="Missouri">
+          <option value="Montana">
+          <option value="Nebraska"> 
+          <option value="Nevada"> 
+          <option value="New Hampshire">
+          <option value="New Jersey">
+          <option value="New Mexico"> 
+          <option value="New York"> 
+          <option value="North Carolina"> 
+          <option value="North Dakota">
+          <option value="Ohio"> 
+          <option value="Oklahoma">
+          <option value="Oregon">
+          <option value="Pennsylvania">
+          <option value="Rhode Island"> 
+          <option value="South Carolina"> 
+          <option value="South Dakota"> 
+          <option value="Tennessee"> 
+          <option value="Texas"> 
+          <option value="Utah"> 
+          <option value="Vermont"> 
+          <option value="Virginia"> 
+          <option value="Washington"> 
+          <option value="West Virginia"> 
+          <option value="Wisconsin"> 
+          <option value="Wyoming">
+        </datalist>
+      <input id="state" name="state" type="text" >
+      <label for="zip">Zip</label>
+      <input id="zip" name="zip" type="text" >
+    </form>
+  </div>
+
+  <div class='add_key'>
+    <h3>Add a Spotkey</h3>
+    <form id="spotkey_form">
+      <label for="location">Location</label>
+      <input id="location" name="location" type="text" >
+      <label for="picture_url">Picture URL</label>
+      <input id="picture_url" name="picture_url" type="text" >
+      <label for="video_url">Video URL</label>
+      <input id="video_url" name="video_url" type="text" >
+      <label for="decription">Description</label><br>
+      <textarea id="decription" name="decription" type="text" ></textarea><br>
+      <label for="door_number">Door Number</label>
+      <input id="door_number" name="door_number" type="text" >
+      <label for="floor">Floor</label>
+      <input id="floor" name="floor" type="text" >
+      <label for="buzzer_code">Buzzeer Code</label>
+      <input id="buzzer_code" name="buzzer_code" type="text" >
+      <label for="cross_street">Cross Street</label>
+      <input id="cross_street" name="cross_street" type="text" >
+      <label for="public_transit">Public Transit</label>
+      <input id="public_transit" name="public_transit" type="text" >
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.addKey').click(function(){
+    console.log('clicked');
+  });
+})

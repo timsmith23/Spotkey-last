@@ -1,0 +1,130 @@
+
+
+/* nanoscrollbar */
+.nano .pane   { background: #ddd; }
+.nano .slider { background: #666; }
+
+#container{
+  margin: 0 auto;
+  width: 1060px;
+  padding: 0 0 0 13vw;
+  min-height: 100%;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+}
+
+.wrap{
+  width: 66vw;
+  display: flex;
+  margin: 0 auto 1em auto;
+}
+.wrap:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+#inProgress.task-list{
+  width: 100%;
+  margin: 0;
+  background-color: #e3e3e3;
+  min-height: 240px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+}
+
+.add-task.task-list{
+  position: fixed;
+  bottom: 1em;
+  right: 20px;
+  margin: 1.5em 1em 0 0;
+  width: 250px;
+  height: 450px;
+  opacity: 0;
+}
+
+.visible{
+  opacity: 1 !important;
+}
+
+.feild{
+  width: 100%;
+  margin: 0 !important;
+}
+.formtastic .link_action a, .registration, button, html input[type="button"], input[type="reset"], input[type="submit"]{
+  input{
+    width: 49% !important;
+    float: left !important;
+    width: 100% !important;
+  }
+}
+
+#spotkey_name,
+#spotkey_street,
+#spotkey_city,
+#spotkey_state,
+#spotkey_zip{
+}
+
+.task-list{
+  width: 48%;
+  float: left;
+  margin: 0 5px;
+  flex-grow: 1;
+  justify-content: space-between;
+  background-color: #e3e3e3;
+  min-height: 240px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+}
+
+.task-list input, .task-list textarea{
+  width: 240px;
+  margin: 1px 5px;
+}
+
+.task-list input{
+  height: 30px;
+}
+
+.todo-task{
+    border-radius: 5px;
+    background-color: #fff;
+    width: 230px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.task-list input[type="button"]{
+    width: 100px;
+    margin: 5px;
+
+}
+
+.todo-task > .task-header{
+    font-weight: bold;
+}
+
+.todo-task > .task-date{
+    font-size: small;
+    font-style: italic;
+}
+
+.todo-task > .task-description{
+    font-size: smaller;
+}
+
+h3{
+    text-align: center;
+}
+
+#delete-div{
+    display: none;
+    background-color: #fff;
+    border: 3px dotted #000;
+    margin: 10px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+}

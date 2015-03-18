@@ -1,0 +1,228 @@
+<link rel="import" href="partials/_header.html">
+<body ng-app="spotkeyApp">
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+ <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : 'y957767587567631',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML =
+          'Thanks for logging in, ' + response.name + '!';
+      });
+    }
+  </script>
+
+  <div class='container-fluid map'>  
+    <nav class="main-nav">
+      <span class="logo">
+        <img src="images/logo.png"></img>
+      </span>
+      <ul>
+        <li><a href='#' class='signup'>Sign Up</a></li>
+        <li><a href='#' class='signin'>Sign In</a></li>
+      </ul>
+    </nav>
+
+    <div id="cd-login">
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="signin-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-password no-top-border" for="signin-password">Password</label>
+          <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+          <a href="#0" class="hide-password">Hide</a>
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+
+        <p class="fieldset">
+          <input type="checkbox" id="remember-me" checked>
+          <label for="remember-me">Remember me</label>
+        </p>
+
+        <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+
+        <p class="fieldset">
+          <input class="facebook" type="submit" value="Login"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+          </fb:login-button>
+            <span id="signinButton" class="google-plus">
+              <span
+                class="g-signin"
+                data-callback="signinCallback"
+                data-clientid="C896028327721-j350sg0e3o0l0m1phb6fga90cs5tm9tl.apps.googleusercontent.com"
+                data-cookiepolicy="single_host_origin"
+                data-requestvisibleactions="http://schema.org/AddAction"
+                data-scope="https://www.googleapis.com/auth/plus.login">
+              </span>
+            </span>
+        </p>
+
+        </form>
+      </form>
+    </div>
+
+    <div id="cd-signup"> <!-- sign up form -->
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-username" for="signup-username">Username</label>
+          <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+          <span class="cd-error-message">Error message here!</span>
+      </p>
+
+      <p class="fieldset">
+        <label class="image-replace cd-email" for="signup-email">E-mail</label>
+        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+        <span class="cd-error-message">Error message here!</span>
+      </p>
+
+      <p class="fieldset">
+        <label class="image-replace cd-password" for="signup-password">Password</label>
+        <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+        <a href="#0" class="hide-password">Hide</a>
+        <span class="cd-error-message">Error message here!</span>
+      </p>
+
+      <p class="fieldset">
+        <input type="checkbox" id="accept-terms">
+        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+      </p>
+
+      <p class="fieldset">
+        <input class="full-width has-padding" type="submit" value="Create account">
+      </p>
+      </form>
+    </div>
+
+    <section class="cd-intro">
+      <h1 class="cd-headline rotate-1">
+        <span>Spotkey is</span>
+        <span class="cd-words-wrapper">
+          <b class="is-visible">life changing</b>
+          <b>inventive</b>
+          <b>easy to use</b>
+        </span>
+      </h1>
+    </section>
+</div>
+
+  <footer>
+    <div class="left">
+      &copy; All rights reserved Spotkey Inc. 2015
+    </div>
+
+    <div class="right">
+      <a href='tel:800708539'>1.800.SPOTKEY</a>
+    </div>
+  </footer>
+
+  <script type="text/ng-template">
+    $(function() {
+      $( ".login_wrap" ).click(function() {
+        $( this ).toggleClass( "visible" );
+      });
+    });
+  </script>
+
+  <script>
+    var mapWidth      = $(window).width();
+    var screenHeight  = ($(window).height() * 0.93);
+    var mapHeight     = Math.ceil(screenHeight.toFixed());
+    var mapImageURL = 'url(https://maps.googleapis.com/maps/api/staticmap?center=London&zoom=14&size='+mapWidth+'x'+mapHeight+'&sensor=true)';
+    $('.map').css('background-image', mapImageURL);
+  </script>
+
+  <script src="node_modules/todomvc-common/base.js"></script>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-route/angular-route.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/spotkeyCtrl.js"></script>
+  <script src="scripts/controllers/spotkey.js"></script>
+</body>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+ <script>
+   !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+   (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+   r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+   }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-60803338-1');
+   ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/controllers/main.js"></script>
+    <script src="../scripts/controllers/about.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,286 @@
+@import '_colors.scss';
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+a {
+  color: $red;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+input, textarea {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+}
+input::-ms-clear, textarea::-ms-clear {
+  display: none;
+}
+
+html, body{
+  font-family: "Proxima Nova", Times, serif;
+}
+
+.well{
+	padding: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+html {
+  box-sizing: border-box;
+	background: #fff;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+	position: relative;
+}
+
+input{
+	width: 100%;
+}
+
+a, a:visted, a:hover{
+}
+
+.main-nav{
+	width: 100vw;
+	height: 97px;
+	background: $graySemi;
+	
+	ul{
+		display: block;
+		float: right;
+
+		a{
+			padding: 10px;
+			background: #fff;
+			border-radius: 999px;
+			margin: 33px 1em 0 0;
+			text-decoration: none;
+			border: 1px solid $red;
+		}
+		a:hover{
+			background: $red;
+			color: #fff;
+		}
+	}
+
+	.logo{
+		float: left;
+		width: 190px !important;
+		height: 87px;
+		margin: 5px 0 0 1em;
+
+		a{
+			border: none;
+		}
+	}
+}
+
+.map{
+	padding-left: 0 !important;
+	width: 100vw;
+	height: 93vh;
+	background-image: url(http://maps.googleapis.com/maps/api/staticmap?center=London&zoom=13&scale=2&size=600x1200&maptype=roadmap&sensor=false&format=jpg-baseline&visual_refresh=true&markers=size:mid%7Ccolor:red%7CLondon);
+}
+
+a[href="/users/auth/facebook"]{
+	position: relative;
+	width: 50%;
+  height: 50px;
+  display: block;
+  background: #3B5998;
+  float: left;
+  margin: 5px 0 0 0;
+  color: transparent;
+}
+a[href="/users/auth/facebook"]:before{
+	content: '';
+	display: block;
+	height: 50px;
+	width: 50px;
+	background: image-url('facebook.png');
+	background-size: cover;
+}
+a[href="/users/auth/facebook"]:after{
+	content: 'Register with Facebook';
+	position: absolute;
+  top: 18px;
+  left: 51px;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+a[href="/users/auth/google_oauth2"]{
+	position: relative;
+	float: left;
+  width: 50%;
+  height: 50px;
+  display: block;
+  background: #3f85f4;
+  margin: -15px 0 0 0;
+  line-height: 0; 
+  color: transparent;
+}
+a[href="/users/auth/google_oauth2"]:before{
+	content: '';
+	display: block;
+	height: 50px;
+	width: 50px;
+	background: image-url('google.png');
+	background-size: cover;
+	border-radius: 3px;
+}
+a[href="/users/auth/google_oauth2"]:after{
+	content: 'Register with Google';
+	position: absolute;
+  top: 26px;
+  left: 53px;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.page-wrap{
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: 50%;
+	left: 50%; 
+	transform: translate(-50%, 100%);
+}
+
+.block{
+	display: block !important;
+}
+
+.formtastic .link_action a,
+.registration,
+button, html input[type="button"], input[type="reset"], input[type="submit"]{
+  margin: 5px;
+	width: 100px;
+	height: 50px;
+  float: right;
+  display: block;
+  color: #fff;
+	line-height: 35px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  text-align: center;
+  background: $red;
+  a {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+.login-btn{
+  height: 50px;
+  width: 50px;
+  font-size: 3em;
+  line-height: 50px;
+  text-align: center;
+  margin: -1.5em 0 0 0.25em;
+}
+
+.form{
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	width: 90vw;
+	padding: 1em;
+	display: none;
+	background: #fff;
+	max-width: 500px;
+	border-radius: 10px;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+// .logo{
+// 	position: absolute;	
+// 	left: 50%;
+// 	top: 5em;
+// 	transform: translate(-50%, -50%);
+// 	width: 20vw;
+// 	max-width: 278px;
+
+// 	a{
+// 		display: block;
+
+// 		img{
+// 			width: 100%;
+// 		}
+// 	}
+// }
+
+.formtastic .stringish input{
+	width: 100%;
+}
+
+.formtastic .input .label{
+	color: $gray;
+	width: 100%;
+	margin: 0 -1em 0 0;
+	text-align: left;
+	float: none;
+}
+
+#user_email {
+  color: red;
+  position: relative;
+}
+#user_email:before {
+	position: absolute;
+	content: "password";
+	top: 0;
+	left: 0;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+// video#bgvid {
+// 	position: relative; right: 0; bottom: 0;
+// 	min-width: 100%; min-height: 100%;
+// 	width: auto; height: auto; z-index: -100;
+// 	background: image-url('seal_1280x640.jpg') #fff no-repeat center center;
+// 	background-repeat:no-repeat;
+// 	background-position: center center;
+// }
+
+footer{
+	position: fixed;
+	bottom: 30px;
+	width: 100%;
+
+	.left, .right{
+		width: 48%;
+		float: left;
+	}
+
+	.left{
+		margin: 0 0 0 1em;
+	}
+
+	.right{
+		text-align: right;
+		margin: 0 1em 0 0;
+	}
+
+	a, a:hover, a:visited{
+		color: $red;
+		text-decoration: none;
+	}
+}

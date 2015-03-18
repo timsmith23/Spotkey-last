@@ -1,0 +1,345 @@
+@import '_colors.scss';
+
+.dashboard-header,
+.settings-header,
+.key-settings-header{
+	position: fixed;
+	top: 10px;
+	left: 0;
+	width: 100vw;
+	margin-top: -0.7em;
+	z-index: 2;
+
+	a{
+		color: #333;
+	  line-height: 3.5em;
+	  margin-right: 1em;
+	}
+	a:hover{
+		color: #d32d27;
+	}
+	a:vistited{
+		color: #333;
+	}
+
+	.well{
+		padding: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	h1{
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		font-size: 1.5em;
+		line-height: 60px;
+	}
+
+	ul.user-menu {
+		padding:0;
+		margin:0;
+		list-style: none;
+		position: relative;
+		display:block;
+	}
+	
+  ul.user-menu li {
+		float:left;
+		display:list-item;
+		list-style: none; 
+		background-color:#fff;
+	}
+
+	ul.user-menu li a {
+		color: #333;
+		display:block;
+		padding:0 5px;
+		font-size:1em;
+		text-decoration:none;
+	}
+
+	li a:hover { color: #d32d27; }
+	
+	/* The Dropdown Styles */
+	/* =================== */
+
+	/* Hide Dropdowns by Default */
+	ul.user-menu ul {
+		display: none;
+		position: absolute; top: 58px;
+	}
+		
+	/* Display Dropdowns on Hover */
+	ul.user-menu li:hover > ul {
+		display:list-item;
+		margin-top: -8px;
+		z-index: 5;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	ul.user-menu  ul li {
+		width:170px;
+		float:none;
+		position: relative;
+		border-bottom:none;
+	}
+
+	.user-pic{
+		float: left;
+		background: #ccc;
+		width: 60px;
+		height: 60px;
+		margin: 0 0.25em 0 0;
+		position: relative;
+
+		.fa-caret-down{
+			position: absolute;
+			bottom: 1px;
+			right: 5px;
+		}
+	}
+
+	.logo{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 109.7px;
+		height: 50px;
+		margin-left: -54.9px;
+		padding: 5px 0 0 0;
+	}
+}
+.dashboard-header:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.add_spotkey {
+  position: fixed;
+  bottom: 1em;
+  right: 12px;
+  margin: 1.5em 1em 0 0 !important;
+  width: 250px !important;
+  height: 450px;
+  opacity: 1;
+  width: 48%;
+  float: left;
+  margin: 0 5px;
+  flex-grow: 1;
+  justify-content: space-between;
+  background-color: #e3e3e3;
+  min-height: 240px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #58595b;
+}
+
+.add_key {
+  position: fixed;
+  bottom: 1em;
+  right: 273px;
+  margin: 1.5em 1em 0 0 !important;
+  width: 250px !important;
+  height: 450px;
+  opacity: 1;
+  width: 48%;
+  float: left;
+  margin: 0 5px;
+  flex-grow: 1;
+  justify-content: space-between;
+  background-color: #e3e3e3;
+  min-height: 240px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #58595b;
+}
+
+.addKey{
+  width: 18px;
+  height: 24px;
+  position: relative;
+  background: url('../../images/logo_black.png');
+  
+  span{
+    color: $gray;
+  }
+}
+.add_Key:after{
+  position: absolute;
+  background: url('../../images/logo_red.png');
+  
+  span{
+    color: $red;
+  }
+}
+
+.the_spotkey{  
+  width: 90%;
+  height: 66px;
+  background: #fff;
+  margin: 5% 5% 0 5%;
+  border-radius: 5px;
+  border: 1px solid #58595b;
+
+  img{
+    float: left;
+    width: 16px;
+    height: 17px;
+    border-radius: 5px 0 0 5px;
+  }
+
+  h1{
+    float: left;
+    color: $gray;
+    margin: 0;
+    font-size: 1em;
+    display: block;
+    padding-left: 5px;
+    width: calc(100% - 60px);
+  }
+  p{
+    float: left;
+    color: $gray;
+    font-size: 0.5em;
+    padding-left: 5px;
+    font-size: 0.75em;
+    width: calc(100% - 60px);
+  }
+
+}
+
+#cd-login{
+  padding: 1em;
+  width: 450px;
+  height: 350px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #999;
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+.spot_pic{
+  position: relative;
+  width: 100vw;
+  height: 400px !important;
+}
+
+ .spotkeys_keys{
+  padding: 1em;
+}
+
+.address{
+  top: 1em;
+  left: 1em;
+  width: 175px;
+  height: 175px;
+  padding: 10px;
+  color: $white;
+  background: $red;
+  text-align: center;
+  position: absolute;
+  border-radius: 9999px;
+  font-family: "Proxima Nova", sans-serif;
+  box-shadow:  7px 7px 30px 0px rgba(50, 50, 50, 0.75);
+  
+  .day{
+    display: block;
+    margin-top: 0.33em;
+    font-size: 4em;
+    margin-left: auto;
+
+  }
+  
+  .street{
+    font-size: 14px;
+    line-height: 1em;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: "Proxima Nova", sans-serif;
+  }
+}
+
+.dashboard{
+	width: 100vw;
+	height: 100vh;
+
+	h1{
+	}
+
+	.my-maps{
+      width: 100vw;
+      margin-top: 60px;
+      height: calc(100vh - 60px);
+      position: relative;
+      
+      .my-spotkeys{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		margin: 1.5em 1em 0 0;
+		width: 400px;
+		min-height: 300px;
+		background: #eee;
+
+        .addKey{
+          position: relative;
+          top: 5px;
+          left: 375px;
+          background: url('../../images/spotkey_small_black.png');
+          width: 20px;
+          height: 25px;
+          z-index: 2;
+          &:hover{
+            background: url('../../images/spotkey_small_red.png');
+          }
+
+          span{
+            margin-left: -96px;
+            line-height: 25px;
+          }
+          span:hover{
+            color: $red;
+          }
+	   }
+	}
+	}
+	.addKey:hover{
+	  background: url('spotkey_small_red.png');
+	}
+	.my-spotkeys:before{
+		content: 'My SpotKey';
+		position: absolute;
+		top: -25px;
+		display: block;
+		font-size: 1em;
+	}
+
+	.my-contacts{
+		position: absolute;
+		top: 350px;
+		right: 20px;
+		margin: 1.5em 1em 0 0;
+		width: 400px;
+		min-height: 300px;
+		background: #eee;
+	}
+	.my-contacts:before{
+		content: 'My Contacts';
+		position: absolute;
+		top: -25px;
+		display: block;
+		font-size: 1em;
+	}
+}
